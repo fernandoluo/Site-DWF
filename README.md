@@ -168,15 +168,37 @@ HTML:
                 
                 <label for="confirma-senha">Confirme a Senha:</label>
                 <input type="password" id="confirma-senha" name="confirma-senha" required>
+
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+                
+                <label for="pais">País:</label>
+                <select id="pais" name="pais" required>
+                    <option value="" disabled selected>Selecione um país</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="espanha">Espanha</option>
+                    <option value="estados-unidos">Estados Unidos</option>
+                    <option value="franca">França</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" name="termos" required>
+                    Aceito os termos de uso
+                </label>
                 
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
     </section>
-
-    <footer>
-        <p>&copy; 2024 DWF Multistore - Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
 
@@ -625,34 +647,6 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-.search-bar {
-    margin-top: 10px;
-}
-
-.search-bar input {
-    padding: 10px;
-    width: 250px;
-    margin-right: 5px;
-}
-
-.search-bar button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: #0056b3;
-}
-
-/* Banner */
-.banner img {
-    width: 100%;
-    height: auto;
-}
-
 /* Produtos */
 .produtos {
     padding: 40px;
@@ -739,12 +733,20 @@ form {
 }
 
 form label {
-    margin-bottom: 5px;
-    font-weight: bold;
+    display: flex;
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+    margin-bottom: 20px;
+    font-weight: normal; /* Muda o peso da fonte para normal para o texto dos termos */
     color: #403434;
 }
 
-form input {
+form label input[type="checkbox"] {
+    margin-right: 10px; /* Espaçamento à direita do checkbox */
+    width: auto; /* Garante que o checkbox não expanda */
+    height: auto; /* Garante que o checkbox não expanda */
+}
+
+form input, form select {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
@@ -793,6 +795,7 @@ footer {
         flex-direction: column;
     }
 }
+
 
 
 
